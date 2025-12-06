@@ -23,3 +23,6 @@ jobs:
 
       - name: Build
         run: dotnet build --configuration Release --no-restore
+        
+      - name: Build Docker Image (OrderService)
+        run: docker build -t orderservice ./OrderService
