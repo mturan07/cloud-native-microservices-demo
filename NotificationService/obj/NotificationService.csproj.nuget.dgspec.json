@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\Projects\\AWS\\cloud-native-microservices-demo\\OrderService\\OrderService.csproj": {}
+    "D:\\Projects\\AWS\\cloud-native-microservices-demo\\NotificationService\\NotificationService.csproj": {}
   },
   "projects": {
-    "d:\\Projects\\AWS\\cloud-native-microservices-demo\\OrderService\\OrderService.csproj": {
+    "D:\\Projects\\AWS\\cloud-native-microservices-demo\\NotificationService\\NotificationService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Projects\\AWS\\cloud-native-microservices-demo\\OrderService\\OrderService.csproj",
-        "projectName": "OrderService",
-        "projectPath": "d:\\Projects\\AWS\\cloud-native-microservices-demo\\OrderService\\OrderService.csproj",
+        "projectUniqueName": "D:\\Projects\\AWS\\cloud-native-microservices-demo\\NotificationService\\NotificationService.csproj",
+        "projectName": "NotificationService",
+        "projectPath": "D:\\Projects\\AWS\\cloud-native-microservices-demo\\NotificationService\\NotificationService.csproj",
         "packagesPath": "C:\\Users\\Murat\\.nuget\\packages\\",
-        "outputPath": "d:\\Projects\\AWS\\cloud-native-microservices-demo\\OrderService\\obj\\",
+        "outputPath": "D:\\Projects\\AWS\\cloud-native-microservices-demo\\NotificationService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -49,12 +49,6 @@
       "frameworks": {
         "net10.0": {
           "targetAlias": "net10.0",
-          "dependencies": {
-            "Swashbuckle.AspNetCore": {
-              "target": "Package",
-              "version": "[6.6.2, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
