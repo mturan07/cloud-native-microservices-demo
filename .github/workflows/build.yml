@@ -26,3 +26,9 @@ jobs:
         
       - name: Build Docker Image (OrderService)
         run: docker build -t orderservice ./OrderService
+
+      - name: Build Docker Image (PaymentService)
+        run: docker build -t paymentservice ./PaymentService
+
+      - name: Build Docker Image (NotificationService)
+        run: docker build -t notificationservice ./NotificationService
