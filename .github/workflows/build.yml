@@ -32,3 +32,32 @@ jobs:
 
       - name: Build Docker Image (NotificationService)
         run: docker build -t notificationservice ./NotificationService
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Build and Push OrderService Image to ECR
+        run: |
+          docker build -t orderservice ./OrderService
+          docker tag orderservice:latest ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/cloud-demo-orderservice:latest
+          docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/cloud-demo-orderservice:latest
+
+      - name: Build and Push PaymentService Image to ECR
+        run: |
+          docker build -t paymentservice ./PaymentService
+          docker tag paymentservice:latest ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/cloud-demo-paymentservice:latest
+          docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/cloud-demo-paymentservice:latest
+
+      - name: Build and Push NotificationService Image to ECR
+        run: |
+          docker build -t notificationservice ./NotificationService
+          docker tag notificationservice:latest ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/cloud-demo-notificationservice:latest
+          docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/cloud-demo-notificationservice:latest
